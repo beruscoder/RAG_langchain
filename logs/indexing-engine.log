@@ -1,0 +1,683 @@
+2026-01-05 22:01:00.0291 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=1, delay=2.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:01:02.0751 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=2, delay=4.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:01:07.0259 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=3, delay=8.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:01:16.0519 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=4, delay=16.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:01:33.0003 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=5, delay=32.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:02:05.0405 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=6, delay=64.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:03:10.0306 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=7, delay=128.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:05:18.0708 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=8, delay=256.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:09:35.0915 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=9, delay=512.0, max_retries=10, exception=litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 840, in acompletion
+    headers, response = await self.make_openai_chat_completion_request(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\logging_utils.py", line 190, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 460, in make_openai_chat_completion_request
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 437, in make_openai_chat_completion_request
+    await openai_aclient.chat.completions.with_raw_response.create(
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2678, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1797, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\openai\_base_client.py", line 1597, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 609, in acompletion
+    response = await init_response
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\llms\openai\openai.py", line 887, in acompletion
+    raise OpenAIError(
+litellm.llms.openai.common_utils.OpenAIError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 628, in acompletion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 2340, in exception_type
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\exception_mapping_utils.py", line 494, in exception_type
+    raise AuthenticationError(
+litellm.exceptions.AuthenticationError: litellm.AuthenticationError: AuthenticationError: OpenAIException - Incorrect API key provided: dummy. You can find your API key at https://platform.openai.com/account/api-keys.
+2026-01-05 22:24:24.0445 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=1, delay=2.0, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:24:26.0916 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=2, delay=4.0, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:24:31.0714 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=3, delay=8.0, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:24:40.0446 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=4, delay=16.0, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:24:56.0915 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Request failed, retrying, retries=5, delay=32.0, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:25:29.0803 - ERROR - graphrag.language_model.providers.litellm.services.retry.exponential_retry - ExponentialRetry: Max retries exceeded, retries=5, max_retries=5, exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:25:29.0803 - ERROR - graphrag.language_model.providers.litellm.request_wrappers.with_logging - with_logging: Async request failed with exception=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\request_wrappers\with_logging.py", line 49, in _wrapped_with_logging_async
+    return await async_fn(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\request_wrappers\with_retries.py", line 52, in _wrapped_with_retries_async
+    return await retry_service.aretry(func=async_fn, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\services\retry\exponential_retry.py", line 71, in aretry
+    return await func(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\graphrag\language_model\providers\litellm\chat_model.py", line 109, in _base_acompletion
+    return await acompletion(**new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1666, in wrapper_async
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\utils.py", line 1512, in wrapper_async
+    result = await original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\main.py", line 563, in acompletion
+    _, custom_llm_provider, _, _ = get_llm_provider(
+                                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 455, in get_llm_provider
+    raise e
+  File "C:\Users\Administrator\Desktop\personal_fun_projects\graph_rag\graphrag\Lib\site-packages\litellm\litellm_core_utils\get_llm_provider_logic.py", line 432, in get_llm_provider
+    raise litellm.exceptions.BadRequestError(  # type: ignore
+litellm.exceptions.BadRequestError: litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-01-05 22:25:29.0803 - ERROR - graphrag.index.validate_config - LLM configuration error detected.
+litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=litellm/ollama/deepseek-r1
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
